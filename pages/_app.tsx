@@ -18,7 +18,7 @@ interface Toast {
 	type: "success" | "error" | "warning" | "info";
 }
 
-const noShowNav = ["/login", "/", "/privacy", "/letter"];
+const noShowNav = ["/login", "/", "/privacy"];
 
 function MyApp({ Component, pageProps }) {
 	const router = useRouter();
@@ -87,37 +87,31 @@ function MyApp({ Component, pageProps }) {
 	};
 
 	useEffect(() => {
-		if (router.pathname !== "/letter") {
-			router.push("/letter");
+		let username = localStorage.getItem("username");
+		let password = localStorage.getItem("password");
+		let remember = localStorage.getItem("remember");
+		let storedDistrictURL = localStorage.getItem("districtURL");
+		storedDistrictURL && setDistrictURL(storedDistrictURL);
+		if (remember === "true" && username && password && storedDistrictURL) {
+			login(username, password, true, districtURL);
 		}
 	}, []);
 
-	// useEffect(() => {
-	// 	let username = localStorage.getItem("username");
-	// 	let password = localStorage.getItem("password");
-	// 	let remember = localStorage.getItem("remember");
-	// 	let storedDistrictURL = localStorage.getItem("districtURL");
-	// 	storedDistrictURL && setDistrictURL(storedDistrictURL);
-	// 	if (remember === "true" && username && password && storedDistrictURL) {
-	// 		login(username, password, true, districtURL);
-	// 	}
-	// }, []);
-
-	// useEffect(() => {
-	// 	if (client !== undefined) {
-	// 		try {
-	// 			client.studentInfo().then((res) => {
-	// 				console.log(res);
-	// 				setStudentInfo(res);
-	// 			});
-	// 		} catch {
-	// 			console.log("waiting");
-	// 		}
-	// 		if (router.pathname === "/login") {
-	// 			router.push("/grades");
-	// 		}
-	// 	}
-	// }, [client]);
+	useEffect(() => {
+		if (client !== undefined) {
+			try {
+				client.studentInfo().then((res) => {
+					console.log(res);
+					setStudentInfo(res);
+				});
+			} catch {
+				console.log("waiting");
+			}
+			if (router.pathname === "/login") {
+				router.push("/grades");
+			}
+		}
+	}, [client]);
 
 	return (
 		<Flowbite>
