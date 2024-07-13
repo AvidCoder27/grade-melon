@@ -115,7 +115,6 @@ const letterGPA = (letterGrade: string, weighted: boolean): number => {
 };
 
 const isWeighted = (name: string): boolean => {
-	let weighted = false;
 	if (name.includes("AP")) return true;
 	if (name.includes("Hon")) return true;
 	if (name.includes("IB")) return true;
