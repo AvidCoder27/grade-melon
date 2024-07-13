@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://raw.githubusercontent.com/tinuh/grade-melon/master/public/assets/logo.png" width="128" alt="Grade Melon logo">
+    <img src="https://raw.githubusercontent.com/AvidCoder27/grade-melon/master/public/assets/logo.png" width="128" alt="Grade Melon logo">
   <h1>Grade Melon</h1>
 </div>
 <br>
@@ -14,7 +14,7 @@ Grade Melon was fully created from reverse engineering StudentVUE's front end, b
 ## Quick Start
 Clone the repository to your local machine.
 ```
-git clone https://github.com/tinuh/grade-melon && cd grade-melon
+git clone https://github.com/AvidCoder27/grade-melon && cd grade-melon
 ```
 Install dependencies
 ```

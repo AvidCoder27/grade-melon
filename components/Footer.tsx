@@ -9,7 +9,7 @@ export default function Footer() {
 					© 2022 Grade Melon™
 				</span>
 				<span className="text-sm text-white sm:text-center">
-					<a target="blank" href="https://github.com/tinuh/grade-melon">
+					<a target="blank" href="https://github.com/AvidCoder27/grade-melon">
 						<FaGithub size={"1.3rem"} />
 					</a>
 				</span>
